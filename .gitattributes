@@ -1,2 +1,22 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Todos los asientos comienzan libres, representados con 0
+asientos = [
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0]
+]
+
+# Solicitar al usuario la fila y columna del asiento
+fila = int(input("Ingrese la fila del asiento (0 a 2): "))
+columna = int(input("Ingrese la columna del asiento (0 a 3): "))
+
+# Marcar el asiento seleccionado como reservado
+asientos[fila][columna] = 1
+
+# Mostrar el estado actualizado de la sala
+print("\nEstado de la sala:")
+
+# Recorrer la matriz utilizando bucles anidados
+for fila_asientos in asientos:
+    for asiento in fila_asientos:
+        print(asiento, end=" ")
+    print()
